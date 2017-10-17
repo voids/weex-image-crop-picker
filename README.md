@@ -56,6 +56,8 @@
   // 在[WXSDKEngine initSDKEnvironment] 之后注册module
   [WXSDKEngine registerModule:@"imageCropPicker" withClass:[ImageCropPicker class]];
   ```
+  
+- 请在info.plist中自行添加权限
 
 ## javascript
 
