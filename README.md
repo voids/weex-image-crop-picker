@@ -98,4 +98,4 @@ export default {
 >
 > 注：跟原插件的android部份一样，并未实现视频压缩，因为ffmpeg太慢并且需要licence
 >
->    个人非objC程序员或java程序员，只是个人兴趣，欢迎大家提交pr
+>    个人非objC程序员或java程序员，能力有限，欢迎大家提交pr
