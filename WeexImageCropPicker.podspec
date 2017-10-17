@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/voids/weex-image-crop-picker'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'voids' => 'qiudong26@gmail.com' }
-  s.source           = { :git => 'https://github.com/voids/WeexImageCropPicker.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/voids/weex-image-crop-picker', :tag => s.version.to_s }
 
   s.platform     = :ios, "8.0"
 
