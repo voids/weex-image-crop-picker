@@ -1,0 +1,363 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B06F23348D60A342847B49BA /* libPods-WeexImageCropPicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9378C1D77E0BB5BC823A5ABE /* libPods-WeexImageCropPicker.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		750114D11F961534002013E1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		497D1B1A9B5D1AF3211D3A4C /* Pods-WeexImageCropPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexImageCropPicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeexImageCropPicker/Pods-WeexImageCropPicker.debug.xcconfig"; sourceTree = "<group>"; };
+		750114D31F961534002013E1 /* libWeexImageCropPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libWeexImageCropPicker.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		750114DF1F961699002013E1 /* UIImage+Resize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Resize.m"; path = "ios/UIImage+Resize.m"; sourceTree = SOURCE_ROOT; };
+		750114E01F961699002013E1 /* Compression.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Compression.h; path = ios/Compression.h; sourceTree = SOURCE_ROOT; };
+		750114E11F961699002013E1 /* ImageCropPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ImageCropPicker.m; path = ios/ImageCropPicker.m; sourceTree = SOURCE_ROOT; };
+		750114E21F961699002013E1 /* UIImage+Resize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UIImage+Resize.h"; path = "ios/UIImage+Resize.h"; sourceTree = SOURCE_ROOT; };
+		750114E31F961699002013E1 /* Compression.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Compression.m; path = ios/Compression.m; sourceTree = SOURCE_ROOT; };
+		750114E41F961699002013E1 /* ImageCropPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ImageCropPicker.h; path = ios/ImageCropPicker.h; sourceTree = SOURCE_ROOT; };
+		88D6D5809E9A52A6F72E7E47 /* Pods-WeexImageCropPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexImageCropPicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeexImageCropPicker/Pods-WeexImageCropPicker.release.xcconfig"; sourceTree = "<group>"; };
+		9378C1D77E0BB5BC823A5ABE /* libPods-WeexImageCropPicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WeexImageCropPicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		750114D01F961534002013E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B06F23348D60A342847B49BA /* libPods-WeexImageCropPicker.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		43C55194C8CE5183D1D4BB25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				497D1B1A9B5D1AF3211D3A4C /* Pods-WeexImageCropPicker.debug.xcconfig */,
+				88D6D5809E9A52A6F72E7E47 /* Pods-WeexImageCropPicker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		750114CA1F961534002013E1 = {
+			isa = PBXGroup;
+			children = (
+				750114D51F961534002013E1 /* WeexImageCropPicker */,
+				750114D41F961534002013E1 /* Products */,
+				43C55194C8CE5183D1D4BB25 /* Pods */,
+				D527E7E65ED502D6397A1837 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		750114D41F961534002013E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				750114D31F961534002013E1 /* libWeexImageCropPicker.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		750114D51F961534002013E1 /* WeexImageCropPicker */ = {
+			isa = PBXGroup;
+			children = (
+				750114E01F961699002013E1 /* Compression.h */,
+				750114E31F961699002013E1 /* Compression.m */,
+				750114E41F961699002013E1 /* ImageCropPicker.h */,
+				750114E11F961699002013E1 /* ImageCropPicker.m */,
+				750114E21F961699002013E1 /* UIImage+Resize.h */,
+				750114DF1F961699002013E1 /* UIImage+Resize.m */,
+			);
+			path = WeexImageCropPicker;
+			sourceTree = "<group>";
+		};
+		D527E7E65ED502D6397A1837 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9378C1D77E0BB5BC823A5ABE /* libPods-WeexImageCropPicker.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		750114D21F961534002013E1 /* WeexImageCropPicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 750114DC1F961534002013E1 /* Build configuration list for PBXNativeTarget "WeexImageCropPicker" */;
+			buildPhases = (
+				A59E1136FF280BAEF81B77D2 /* [CP] Check Pods Manifest.lock */,
+				750114CF1F961534002013E1 /* Sources */,
+				750114D01F961534002013E1 /* Frameworks */,
+				750114D11F961534002013E1 /* CopyFiles */,
+				EC6C7E499F04B798F8C91BA9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WeexImageCropPicker;
+			productName = WeexImageCropPicker;
+			productReference = 750114D31F961534002013E1 /* libWeexImageCropPicker.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		750114CB1F961534002013E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "XMAX";
+				TargetAttributes = {
+					750114D21F961534002013E1 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 750114CE1F961534002013E1 /* Build configuration list for PBXProject "WeexImageCropPicker" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 750114CA1F961534002013E1;
+			productRefGroup = 750114D41F961534002013E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				750114D21F961534002013E1 /* WeexImageCropPicker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A59E1136FF280BAEF81B77D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WeexImageCropPicker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC6C7E499F04B798F8C91BA9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-WeexImageCropPicker/Pods-WeexImageCropPicker-resources.sh",
+				$PODS_CONFIGURATION_BUILD_DIR/QBImagePickerController/QBImagePicker.bundle,
+				"${PODS_ROOT}/RSKImageCropper/RSKImageCropper/RSKImageCropperStrings.bundle",
+				"${PODS_ROOT}/WeexSDK/pre-build/native-bundle-main.js",
+				"${PODS_ROOT}/WeexSDK/ios/sdk/WeexSDK/Resources/wx_load_error@3x.png",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WeexImageCropPicker/Pods-WeexImageCropPicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		750114CF1F961534002013E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		750114DA1F961534002013E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = SJ3638ST2Z;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		750114DB1F961534002013E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = SJ3638ST2Z;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "$(inherited)";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		750114DD1F961534002013E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 497D1B1A9B5D1AF3211D3A4C /* Pods-WeexImageCropPicker.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WUQ7396F55;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		750114DE1F961534002013E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 88D6D5809E9A52A6F72E7E47 /* Pods-WeexImageCropPicker.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WUQ7396F55;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		750114CE1F961534002013E1 /* Build configuration list for PBXProject "WeexImageCropPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				750114DA1F961534002013E1 /* Debug */,
+				750114DB1F961534002013E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		750114DC1F961534002013E1 /* Build configuration list for PBXNativeTarget "WeexImageCropPicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				750114DD1F961534002013E1 /* Debug */,
+				750114DE1F961534002013E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 750114CB1F961534002013E1 /* Project object */;
+}
