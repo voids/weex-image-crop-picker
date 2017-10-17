@@ -18,8 +18,6 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.frameworks = "SomeFramework", "AnotherFramework"
-
   s.dependency "WeexSDK"
   s.dependency "WeexPluginLoader"
   s.dependency "QBImagePickerController", "3.4.0"
