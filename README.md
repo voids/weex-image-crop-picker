@@ -5,7 +5,6 @@
 ## Android
 
 - root目录的build.gradle增加jitpack的地址
-
   ```gradle
   allprojects {
     repositories {
@@ -16,7 +15,6 @@
   ```
 
 - 在你的app目录的build.gradle增加一行依赖
-
   ```gradle
   dependencies {
     compile com.github.voids:weex-image-crop-picker:0.1.0
@@ -24,7 +22,6 @@
   ```
 
 - Application子类中注册module
-
   ```java
   import cn.dv4.weeximagecroppicker.ImageCropPickerModule;
   // 在WXSDKEngine.initialize之后注册module
@@ -32,9 +29,7 @@
   ```
 
 - 在你的WXSDKInstance所在的Activity中重载onActivityResult，否则接收不到返回结果
-
-  ```java
-  
+  ```java
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
       super.onActivityResult(requestCode, resultCode, data);
@@ -45,7 +40,6 @@
   ```
 
 - 如果需要使用camera，则需要手动在AndroidManifest.xml中添加一行权限
-
   ```xml
   <uses-permission android:name="android.permission.CAMERA"/>
   ```
@@ -53,63 +47,58 @@
 ## iOS
 
 - 在Podfile增加一行依赖
-
   ```Podfile
   pod 'WeexImageCropPicker'
   ```
 
 - 更新依赖
-
   ```shell
   pod install
   ```
 
 - appdelegate中注册module
-
   ```objective-c
   #import <WeexImageCropPicker/ImageCropPicker.h>
   // 在[WXSDKEngine initSDKEnvironment] 之后注册module
   [WXSDKEngine registerModule:@"imageCropPicker" withClass:[ImageCropPicker class]];
   ```
-  
+
 - 请在info.plist中自行添加权限
 
 ## javascript
 
 > 由于weex的扩展为callback，不支持promise，所以用法有些调整。
+  ```javascript
+  // example
+  var ImageCropPicker = weex.requireModule('imageCropPicker')
+  var options = {
+      width: 300,
+      height: 300,
+      includeExif: true,
+      mediaType: 'photo',
+      cropping: true
+  }
 
-```javascript
-// example
-var ImageCropPicker = weex.requireModule('imageCropPicker')
-
-var options = {
-    width: 300,
-    height: 300,
-    includeExif: true,
-    mediaType: 'photo',
-    cropping: true
-}
-
-export default {
-    data: {
-        result:""
-    },
-    methods: {
-        gallery(e) {
-            ImageCropPicker.openPicker(options, (response) => {
-                // 成功返回 {code:'E_SUCCESS', data:{...}}
-                this.result = JSON.stringify(response)
-            })
-        },
-        camera(e) {
-            ImageCropPicker.openCamera(options, (response) => {
-                // 失败返回 {cdoe:'E_PERMISSION_MISSING', message:'...'}
-                this.result = JSON.stringify(response)
-            })
-        }
-    }
-}
-```
+  export default {
+      data: {
+          result:""
+      },
+      methods: {
+          gallery(e) {
+              ImageCropPicker.openPicker(options, (response) => {
+                  // 成功返回 {code:'E_SUCCESS', data:{...}}
+                  this.result = JSON.stringify(response)
+              })
+          },
+          camera(e) {
+              ImageCropPicker.openCamera(options, (response) => {
+                  // 失败返回 {cdoe:'E_PERMISSION_MISSING', message:'...'}
+                  this.result = JSON.stringify(response)
+              })
+          }
+      }
+  }
+  ```
 
 > 参数均与[react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker) 文档中所列的参数保持一致
 >
