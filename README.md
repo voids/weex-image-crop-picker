@@ -34,6 +34,7 @@
 - 在你的WXSDKInstance所在的Activity中重载onActivityResult，否则接收不到返回结果
 
   ```java
+  
   @Override
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
       super.onActivityResult(requestCode, resultCode, data);
