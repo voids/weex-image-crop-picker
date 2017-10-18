@@ -16,17 +16,31 @@
   ```
 
 - 在你的app目录的build.gradle增加一行依赖
+
   ```gradle
   dependencies {
     compile com.github.voids:weex-image-crop-picker:0.1.0
   }
   ```
 
-- application子类中注册module
+- Application子类中注册module
+
   ```java
   import cn.dv4.weeximagecroppicker.ImageCropPickerModule;
   // 在WXSDKEngine.initialize之后注册module
   WXSDKEngine.registerModule("imageCropPicker", ImageCropPickerModule.class);
+  ```
+
+- 在你的WXSDKInstance所在的Activity中重载onActivityResult，否则接收不到返回结果
+
+  ```java
+  @Override
+  protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+      super.onActivityResult(requestCode, resultCode, data);
+          if (mWXSDKInstance != null) {
+          mWXSDKInstance.onActivityResult(requestCode, resultCode, data);
+      }
+  }
   ```
 
 - 如果需要使用camera，则需要手动在AndroidManifest.xml中添加一行权限
