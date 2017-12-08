@@ -26,7 +26,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.taobao.android:weex_sdk:0.+@aar'
+    compile 'com.taobao.android:weex_sdk:0.16.0@aar'
     compile 'com.alibaba:fastjson:1.1.64.android'
     compile 'com.yalantis:ucrop:2.2.0-native'
     compile 'id.zelory:compressor:2.1.0'
