@@ -475,7 +475,7 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
                                  [indicatorView stopAnimating];
                                  [overlayView removeFromSuperview];
                                  [imagePickerController dismissViewControllerAnimated:YES completion:[self waitAnimationEnd:^{
-                                     self.callback(@{@"code":ERROR_SUCCESS});
+                                     self.callback(@{@"code":ERROR_SUCCESS, @"data":selections});
                                  }]];
                                  return;
                              }
