@@ -539,7 +539,7 @@ public class ImageCropPickerModule extends WXModule {
                 startCropping(activity, uri);
             } else {
                 try {
-                    responseHelper.invoke(E_SUCCESS, getSelection(activity, uri, false));
+                    responseHelper.invoke(E_SUCCESS, getSelection(activity, uri, true));
                 } catch (Exception ex) {
                     responseHelper.invoke(E_NO_IMAGE_DATA_FOUND, ex.getMessage());
                 }
