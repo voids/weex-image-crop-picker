@@ -11,6 +11,7 @@
                                                                                  @"LowQuality": AVAssetExportPresetLowQuality,
                                                                                  @"MediumQuality": AVAssetExportPresetMediumQuality,
                                                                                  @"HighestQuality": AVAssetExportPresetHighestQuality,
+                                                                                 @"Passthrough": AVAssetExportPresetPassthrough,
                                                                                  }];
     if (@available(iOS 9.0, *)) {
         [dic addEntriesFromDictionary:@{@"3840x2160": AVAssetExportPreset3840x2160}];
