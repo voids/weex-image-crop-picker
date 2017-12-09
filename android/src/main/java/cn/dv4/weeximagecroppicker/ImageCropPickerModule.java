@@ -66,6 +66,7 @@ public class ImageCropPickerModule extends WXModule {
     private String cropperActiveWidgetColor = DEFAULT_TINT;
     private String cropperStatusBarColor = DEFAULT_TINT;
     private String cropperToolbarColor = DEFAULT_TINT;
+    private String cropperToolbarTitle = null;
 
     //Light Blue 500
     private final String DEFAULT_WIDGET_COLOR = "#03A9F4";
@@ -99,6 +100,7 @@ public class ImageCropPickerModule extends WXModule {
         cropperActiveWidgetColor = options.containsKey("cropperActiveWidgetColor") ? options.getString("cropperActiveWidgetColor") : cropperActiveWidgetColor;
         cropperStatusBarColor = options.containsKey("cropperStatusBarColor") ? options.getString("cropperStatusBarColor") : cropperStatusBarColor;
         cropperToolbarColor = options.containsKey("cropperToolbarColor") ? options.getString("cropperToolbarColor") : cropperToolbarColor;
+        cropperToolbarTitle = options.containsKey("cropperToolbarTitle") ? options.getString("cropperToolbarTitle") : null;
         cropperCircleOverlay = options.containsKey("cropperCircleOverlay") ? options.getBoolean("cropperCircleOverlay") : cropperCircleOverlay;
         showCropGuidelines = options.containsKey("showCropGuidelines") ? options.getBoolean("showCropGuidelines") : showCropGuidelines;
         hideBottomControls = options.containsKey("hideBottomControls") ? options.getBoolean("hideBottomControls") : hideBottomControls;
@@ -465,6 +467,9 @@ public class ImageCropPickerModule extends WXModule {
         options.setCircleDimmedLayer(cropperCircleOverlay);
         options.setShowCropGrid(showCropGuidelines);
         options.setHideBottomControls(hideBottomControls);
+        if (cropperToolbarTitle != null) {
+            options.setToolbarTitle(cropperToolbarTitle);
+        }
         if (enableRotationGesture) {
             // UCropActivity.ALL = enable both rotation & scaling
             options.setAllowedGestures(
