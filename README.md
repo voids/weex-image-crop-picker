@@ -1,5 +1,9 @@
 # weex-image-crop-picker
 
+[![JitPack](https://img.shields.io/jitpack/v/voids/weex-image-crop-picker.svg)](https://jitpack.io/#voids/weex-image-crop-picker)
+[![CocoaPods](https://img.shields.io/cocoapods/v/WeexImageCropPicker.svg)](https://cocoapods.org/pods/WeexImageCropPicker)
+[![license](https://img.shields.io/github/license/voids/weex-image-crop-picker.svg)]()
+
 > 由于weex market里的[weex-image-picker](https://github.com/weexext/weex-image-picker)插件并无裁剪和多选功能，看到也是从[react-native-image-picker](https://github.com/react-community/react-native-image-picker)移植来的，并且该插件原作者推荐了功能比较多的 [react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker) ，于是产生了此项目。
 
 ## Android
@@ -17,7 +21,7 @@
 - 在你的app目录的build.gradle增加一行依赖
   ```gradle
   dependencies {
-    compile com.github.voids:weex-image-crop-picker:0.1.3
+    compile com.github.voids:weex-image-crop-picker:0.1.5
   }
   ```
 
@@ -103,5 +107,3 @@
 > 参数均与[react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker) 文档中所列的参数保持一致
 >
 > 注：跟原插件的android部份一样，并未实现视频压缩，因为ffmpeg太慢并且需要licence
->
->    个人非objC程序员或java程序员，能力有限，欢迎大家提交pr
