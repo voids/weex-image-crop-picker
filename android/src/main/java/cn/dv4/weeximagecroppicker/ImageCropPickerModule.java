@@ -363,12 +363,14 @@ public class ImageCropPickerModule extends WXModule {
         String videoPath = compression.compressVideo(activity, options, path, compressedVideoPath);
         try {
             Bitmap bmp = validateVideo(videoPath);
+            long modificationDate = new File(videoPath).lastModified();
             JSONObject video = new JSONObject();
             video.put("width", bmp.getWidth());
             video.put("height", bmp.getHeight());
             video.put("mime", mime);
             video.put("size", (int) new File(videoPath).length());
             video.put("path", "file://" + videoPath);
+            video.put("modificationDate", String.valueOf(modificationDate));
             return video;
         } catch (Exception e) {
             throw e;
@@ -419,12 +421,14 @@ public class ImageCropPickerModule extends WXModule {
         File compressedImage = compression.compressImage(activity, options, path);
         String compressedImagePath = compressedImage.getPath();
         BitmapFactory.Options options = validateImage(compressedImagePath);
+        long modificationDate = new File(path).lastModified();
 
         image.put("path", "file://" + compressedImagePath);
         image.put("width", options.outWidth);
         image.put("height", options.outHeight);
         image.put("mime", options.outMimeType);
         image.put("size", (int) new File(compressedImagePath).length());
+        image.put("modificationDate", String.valueOf(modificationDate));
 
         if (includeBase64) {
             image.put("data", getBase64StringFromFile(compressedImagePath));
