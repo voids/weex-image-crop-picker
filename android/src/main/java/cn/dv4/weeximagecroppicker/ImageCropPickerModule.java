@@ -561,7 +561,9 @@ public class ImageCropPickerModule extends WXModule {
             final Uri resultUri = UCrop.getOutput(data);
             if (resultUri != null) {
                 try {
-                    responseHelper.invoke(E_SUCCESS, getSelection(activity, resultUri, false));
+                    JSONObject result = getSelection(activity, resultUri, false);
+                    result.put("cropRect", ImageCropPickerModule.getCroppedRectMap(data));
+                    responseHelper.invoke(E_SUCCESS, result);
                 } catch (Exception ex) {
                     responseHelper.invoke(E_NO_IMAGE_DATA_FOUND, ex.getMessage());
                 }
@@ -602,6 +604,18 @@ public class ImageCropPickerModule extends WXModule {
         // Save a file: path for use with ACTION_VIEW intents
         mCurrentPhotoPath = "file:" + image.getAbsolutePath();
         return image;
+    }
+
+    private static JSONObject getCroppedRectMap(Intent data) {
+        final int DEFAULT_VALUE = -1;
+        final JSONObject map = new JSONObject();
+
+        map.put("x", data.getIntExtra(UCrop.EXTRA_OUTPUT_OFFSET_X, DEFAULT_VALUE));
+        map.put("y", data.getIntExtra(UCrop.EXTRA_OUTPUT_OFFSET_Y, DEFAULT_VALUE));
+        map.put("width", data.getIntExtra(UCrop.EXTRA_OUTPUT_IMAGE_WIDTH, DEFAULT_VALUE));
+        map.put("height", data.getIntExtra(UCrop.EXTRA_OUTPUT_IMAGE_HEIGHT, DEFAULT_VALUE));
+
+        return map;
     }
 
     @NonNull
