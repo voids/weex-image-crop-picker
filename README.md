@@ -96,7 +96,7 @@
           },
           camera(e) {
               ImageCropPicker.openCamera(options, (response) => {
-                  // 失败返回 {cdoe:'E_PERMISSION_MISSING', message:'...'}
+                  // 失败返回 {code:'E_PERMISSION_MISSING', message:'...'}
                   this.result = JSON.stringify(response)
               })
           }
