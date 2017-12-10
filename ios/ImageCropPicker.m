@@ -356,6 +356,7 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
                                                   withMime:@"video/mp4"
                                                   withSize:fileSizeValue
                                                   withData:nil
+                                                  withRect:CGRectNull
                                           withCreationDate:forAsset.creationDate
                                       withModificationDate:forAsset.modificationDate
                              ]);
@@ -366,7 +367,7 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
      }];
 }
 
-- (NSDictionary*) createAttachmentResponse:(NSString*)filePath withExif:(NSDictionary*) exif withSourceURL:(NSString*)sourceURL withLocalIdentifier:(NSString*)localIdentifier withFilename:(NSString*)filename withWidth:(NSNumber*)width withHeight:(NSNumber*)height withMime:(NSString*)mime withSize:(NSNumber*)size withData:(NSString*)data withCreationDate:(NSDate*)creationDate withModificationDate:(NSDate*)modificationDate {
+- (NSDictionary*) createAttachmentResponse:(NSString*)filePath withExif:(NSDictionary*) exif withSourceURL:(NSString*)sourceURL withLocalIdentifier:(NSString*)localIdentifier withFilename:(NSString*)filename withWidth:(NSNumber*)width withHeight:(NSNumber*)height withMime:(NSString*)mime withSize:(NSNumber*)size withData:(NSString*)data withRect:(CGRect)cropRect withCreationDate:(NSDate*)creationDate withModificationDate:(NSDate*)modificationDate {
     return @{
              @"path": filePath,
              @"sourceURL": (sourceURL) ? sourceURL : [NSNull null],
@@ -378,6 +379,7 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
              @"size": size,
              @"data": (data) ? data : [NSNull null],
              @"exif": (exif) ? exif : [NSNull null],
+             @"cropRect": CGRectIsNull(cropRect) ? [NSNull null] : [ImageCropPicker cgRectToDictionary:cropRect],
              @"creationDate:": (creationDate) ? [NSString stringWithFormat:@"%.0f", [creationDate timeIntervalSince1970]] : [NSNull null],
              @"modificationDate": (modificationDate) ? [NSString stringWithFormat:@"%.0f", [modificationDate timeIntervalSince1970]] : [NSNull null],
              };
@@ -470,6 +472,7 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
                                                                              withMime:imageResult.mime
                                                                              withSize:[NSNumber numberWithUnsignedInteger:imageResult.data.length]
                                                                              withData:[[self.options objectForKey:@"includeBase64"] boolValue] ? [imageResult.data base64EncodedStringWithOptions:0]: nil
+                                                                             withRect:CGRectNull
                                                                      withCreationDate:phAsset.creationDate
                                                                  withModificationDate:phAsset.modificationDate
                                                         ]];
@@ -597,6 +600,7 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
                                                           withMime:imageResult.mime
                                                           withSize:[NSNumber numberWithUnsignedInteger:imageResult.data.length]
                                                           withData:[[self.options objectForKey:@"includeBase64"] boolValue] ? [imageResult.data base64EncodedStringWithOptions:0] : nil
+                                                          withRect:CGRectNull
                                                   withCreationDate:creationDate
                                               withModificationDate:modificationDate
                                      ]
@@ -724,6 +728,7 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
                                                       withMime:imageResult.mime
                                                       withSize:[NSNumber numberWithUnsignedInteger:imageResult.data.length]
                                                       withData:[[self.options objectForKey:@"includeBase64"] boolValue] ? [imageResult.data base64EncodedStringWithOptions:0] : nil
+                                                      withRect:cropRect
                                               withCreationDate:self.croppingFile[@"creationDate"]
                                           withModificationDate:self.croppingFile[@"modificationDate"]
                                  ]
@@ -756,6 +761,15 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
                   usingCropRect:(CGRect)cropRect
                   rotationAngle:(CGFloat)rotationAngle {
     [self imageCropViewController:controller didCropImage:croppedImage usingCropRect:cropRect];
+}
+
++ (NSDictionary *)cgRectToDictionary:(CGRect)rect {
+    return @{
+             @"x": [NSNumber numberWithFloat: rect.origin.x],
+             @"y": [NSNumber numberWithFloat: rect.origin.y],
+             @"width": [NSNumber numberWithFloat: CGRectGetWidth(rect)],
+             @"height": [NSNumber numberWithFloat: CGRectGetHeight(rect)]
+             };
 }
 
 @end
