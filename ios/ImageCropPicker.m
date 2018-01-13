@@ -236,11 +236,11 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
                                               @"SlomoVideos" : @(PHAssetCollectionSubtypeSmartAlbumSlomoVideos),
                                               @"UserLibrary" : @(PHAssetCollectionSubtypeSmartAlbumUserLibrary),
                                               @"SelfPortraits" : @(PHAssetCollectionSubtypeSmartAlbumSelfPortraits),
-                                              @"Screenshots" : @(PHAssetCollectionSubtypeSmartAlbumScreenshots),
-                                              @"DepthEffect" : @(PHAssetCollectionSubtypeSmartAlbumDepthEffect),
-                                              @"LivePhotos" : @(PHAssetCollectionSubtypeSmartAlbumLivePhotos),
-                                              @"Animated" : @(PHAssetCollectionSubtypeSmartAlbumAnimated),
-                                              @"LongExposure" : @(PHAssetCollectionSubtypeSmartAlbumLongExposures),
+                                              @"Screenshots" : @(PHAssetCollectionSubtypeSmartAlbumScreenshots), // ios9.0 or newer
+                                              @"DepthEffect" : @(PHAssetCollectionSubtypeSmartAlbumDepthEffect), // ios10.2 or newer
+                                              @"LivePhotos" : @(PHAssetCollectionSubtypeSmartAlbumLivePhotos),   // ios10.3 or newer
+                                              @"Animated" : @(PHAssetCollectionSubtypeSmartAlbumAnimated),       // ios11.0 or newer
+                                              @"LongExposure" : @(PHAssetCollectionSubtypeSmartAlbumLongExposures), // ios11.0 or newer
                                               };
                 NSMutableArray *albumsToShow = [NSMutableArray arrayWithCapacity:5];
                 for (NSString* album in [self.options objectForKey:@"smartAlbums"]) {
