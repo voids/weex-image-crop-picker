@@ -21,7 +21,7 @@
 - 在你的app目录的build.gradle增加一行依赖
   ```gradle
   dependencies {
-    compile com.github.voids:weex-image-crop-picker:0.1.5
+    compile com.github.voids:weex-image-crop-picker:1.0.0
   }
   ```
 
