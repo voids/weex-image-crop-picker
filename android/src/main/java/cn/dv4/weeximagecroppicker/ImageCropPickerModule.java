@@ -277,6 +277,7 @@ public class ImageCropPickerModule extends WXModule {
                 galleryIntent.putExtra(Intent.EXTRA_MIME_TYPES, mimetypes);
             }
             galleryIntent.addCategory(Intent.CATEGORY_OPENABLE);
+            galleryIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             galleryIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, multiple);
             galleryIntent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
 
