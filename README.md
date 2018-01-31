@@ -23,6 +23,12 @@
   dependencies {
     compile com.github.voids:weex-image-crop-picker:1.0.0
   }
+  // 如果提示duplicate entry，则exclude不需要的module，如下
+  dependencies {
+      compile('com.github.voids:weex-image-crop-picker:1.0.0') {
+          exclude module: 'weex_sdk'
+      }
+  }
   ```
 
 - Application子类中注册module
