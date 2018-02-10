@@ -1,7 +1,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'WeexImageCropPicker'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'A weex plugin for image picker'
   s.description      = <<-DESC
                        WeexImageCropPicker is an image picker with support for camera, configurable compression, multiple images and cropping for weex framework.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 
   s.requires_arc = true
 
-  s.dependency "WeexSDK", "~> 0.16.0"
+  s.dependency "WeexSDK"
   s.dependency "QBImagePickerController", "~> 3.4.0"
   s.dependency "RSKImageCropper", "~> 2.0.0"
 end
