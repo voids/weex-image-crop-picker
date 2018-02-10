@@ -117,12 +117,13 @@
 | width                                   |                  number                  | 剪裁后图片的宽度，`cropping`为true时有效              |
 | height                                  |                  number                  | 剪裁后图片的高度，`cropping` 为true时有效             |
 | multiple                                |           bool (default false)           | 是否开启多选，开启多选后裁剪功能无效                       |
+| writeTempFile (ios only)                |           bool (default true)            | When set to false, does not write temporary files for the selected images. This is useful to improve performance when you are retrieving file contents with the `includeBase64` option and don't need to read files from disk. |
 | includeBase64                           |           bool (default false)           | 是否输出base64                               |
 | includeExif                             |           bool (default false)           | 是否输出图片exif信息，如gps、光圈、快门速度等               |
 | cropperActiveWidgetColor (android only) |       string (default `"#424242"`)       | When cropping image, determines ActiveWidget color. |
 | cropperStatusBarColor (android only)    |        string (default `#424242`)        | When cropping image, determines the color of StatusBar. |
 | cropperToolbarColor (android only)      |        string (default `#424242`)        | When cropping image, determines the color of Toolbar. |
-| cropperToolbarTitle (android only)      |      string (default `Edit Photo`)       | When cropping image, determines the title of Toolbar. |
+| cropperToolbarTitle                     |      string (default `Edit Photo`)       | When cropping image, determines the title of Toolbar. |
 | cropperCircleOverlay                    |           bool (default false)           | 是否裁剪时开启遮罩                                |
 | minFiles (ios only)                     |            number (default 1)            | Min number of files to select when using `multiple` option |
 | maxFiles (ios only)                     |            number (default 5)            | Max number of files to select when using `multiple` option |

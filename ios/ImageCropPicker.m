@@ -32,6 +32,28 @@
 @implementation ImageResult
 @end
 
+@interface LabeledCropView : RSKImageCropViewController {
+}
+@property NSString *toolbarTitle;
+@property UILabel *_moveAndScaleLabel;
+- (UILabel *)moveAndScaleLabel;
+@end
+
+@implementation LabeledCropView
+- (UILabel *)moveAndScaleLabel
+{
+    if (!self._moveAndScaleLabel) {
+        self._moveAndScaleLabel = [[UILabel alloc] init];
+        self._moveAndScaleLabel.backgroundColor = [UIColor clearColor];
+        self._moveAndScaleLabel.text = self.toolbarTitle;
+        self._moveAndScaleLabel.textColor = [UIColor whiteColor];
+        self._moveAndScaleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+        self._moveAndScaleLabel.opaque = NO;
+    }
+    return self._moveAndScaleLabel;
+}
+@end
+
 @implementation ImageCropPicker
 
 WX_EXPORT_METHOD(@selector(openCamera:callback:))
@@ -280,12 +302,13 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
 }
 
 - (void)startCropping:(UIImage *)image {
-    RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:image];
+    LabeledCropView *imageCropVC = [[LabeledCropView alloc] initWithImage:image];
     if ([[[self options] objectForKey:@"cropperCircleOverlay"] boolValue]) {
         imageCropVC.cropMode = RSKImageCropModeCircle;
     } else {
         imageCropVC.cropMode = RSKImageCropModeCustom;
     }
+    imageCropVC.toolbarTitle = [[self options] objectForKey:@"cropperToolbarTitle"];
     imageCropVC.avoidEmptySpaceAroundImage = YES;
     imageCropVC.dataSource = self;
     imageCropVC.delegate = self;
