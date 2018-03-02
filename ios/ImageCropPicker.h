@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 #import <QBImagePickerController/QBImagePickerController.h>
-#import <RSKImageCropper.h>
+#import <RSKImageCropper/RSKImageCropper.h>
 #import <math.h>
 #import <WeexSDK/WXModuleProtocol.h>
 #import "UIImage+Resize.h"
