@@ -267,8 +267,8 @@ public class ImageCropPickerModule extends WXModule {
     private void initiatePicker() {
         try {
             final Activity activity = getCurrentActivity();
-            final Intent galleryIntent = new Intent();
-            galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+            final Intent galleryIntent = new Intent(Intent.ACTION_PICK);
+
             if (cropping || mediaType.equals("photo")) {
                 galleryIntent.setType("image/*");
             } else if (mediaType.equals("video")) {
@@ -278,12 +278,13 @@ public class ImageCropPickerModule extends WXModule {
                 String[] mimetypes = {"image/*", "video/*"};
                 galleryIntent.putExtra(Intent.EXTRA_MIME_TYPES, mimetypes);
             }
-            galleryIntent.addCategory(Intent.CATEGORY_OPENABLE);
+
             galleryIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             galleryIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, multiple);
+            galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
             galleryIntent.putExtra(Intent.EXTRA_LOCAL_ONLY, true);
 
-            final Intent chooserIntent = Intent.createChooser(galleryIntent, "选择");
+            final Intent chooserIntent = Intent.createChooser(galleryIntent, "Choose");
             activity.startActivityForResult(chooserIntent, IMAGE_PICKER_REQUEST);
         } catch (Exception e) {
             e.printStackTrace();
