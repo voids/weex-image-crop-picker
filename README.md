@@ -21,11 +21,11 @@
 - 在你的app目录的build.gradle增加一行依赖
   ```gradle
   dependencies {
-    compile com.github.voids:weex-image-crop-picker:1.0.0
+    compile com.github.voids:weex-image-crop-picker:1.0.2
   }
   // 如果提示duplicate entry，则exclude不需要的module，如下
   dependencies {
-      compile('com.github.voids:weex-image-crop-picker:1.0.0') {
+      compile('com.github.voids:weex-image-crop-picker:1.0.2') {
           exclude module: 'weex_sdk'
       }
   }
@@ -123,12 +123,13 @@
 | cropperActiveWidgetColor (android only) |       string (default `"#424242"`)       | When cropping image, determines ActiveWidget color. |
 | cropperStatusBarColor (android only)    |        string (default `#424242`)        | When cropping image, determines the color of StatusBar. |
 | cropperToolbarColor (android only)      |        string (default `#424242`)        | When cropping image, determines the color of Toolbar. |
+| freeStyleCropEnabled (android only)     |           bool (default false)           | Enables user to apply custom rectangle area for cropping |
 | cropperToolbarTitle                     |      string (default `Edit Photo`)       | When cropping image, determines the title of Toolbar. |
 | cropperCircleOverlay                    |           bool (default false)           | 是否裁剪时开启遮罩                                |
 | minFiles (ios only)                     |            number (default 1)            | Min number of files to select when using `multiple` option |
 | maxFiles (ios only)                     |            number (default 5)            | Max number of files to select when using `multiple` option |
 | waitAnimationEnd (ios only)             |           bool (default true)            | Promise will resolve/reject once ViewController `completion` block is called |
-| smartAlbums (ios only)                  | array (supported values: ['PhotoStream', 'Generic', 'Panoramas', 'Videos', 'Favorites', 'Timepalses', 'AllHidden', 'RecentlyAdded', 'Bursts', 'SlomoVideos', 'UserLibrary', 'SelfPortraits', 'Screenshots', 'DepthEffect', 'LivePhotos', 'Animated', 'LongExposure']) (default ['UserLibrary', 'PhotoStream', 'Panoramas', 'Videos', 'Bursts']) | List of smart albums to choose from      |
+| smartAlbums (ios only)                  | array (supported values: ['PhotoStream', 'Generic', 'Panoramas', 'Videos', 'Favorites', 'Timelapses', 'AllHidden', 'RecentlyAdded', 'Bursts', 'SlomoVideos', 'UserLibrary', 'SelfPortraits', 'Screenshots', 'DepthEffect', 'LivePhotos', 'Animated', 'LongExposure']) (default ['UserLibrary', 'PhotoStream', 'Panoramas', 'Videos', 'Bursts']) | List of smart albums to choose from      |
 | useFrontCamera (ios only)               |           bool (default false)           | Whether to default to the front/'selfie' camera when opened |
 | compressVideoPreset (ios only)          |      string (default MediumQuality)      | Choose which preset will be used for video compression |
 | compressImageMaxWidth                   |          number (default none)           | 图片压缩指定最大宽度                               |
