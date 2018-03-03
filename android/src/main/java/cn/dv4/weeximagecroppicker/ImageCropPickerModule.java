@@ -54,6 +54,7 @@ public class ImageCropPickerModule extends WXModule {
     private boolean includeExif = false;
     private boolean cropping = false;
     private boolean cropperCircleOverlay = false;
+    private boolean freeStyleCropEnabled = false;
     private boolean showCropGuidelines = true;
     private boolean hideBottomControls = false;
     private boolean enableRotationGesture = false;
@@ -102,6 +103,7 @@ public class ImageCropPickerModule extends WXModule {
         cropperToolbarColor = options.containsKey("cropperToolbarColor") ? options.getString("cropperToolbarColor") : cropperToolbarColor;
         cropperToolbarTitle = options.containsKey("cropperToolbarTitle") ? options.getString("cropperToolbarTitle") : null;
         cropperCircleOverlay = options.containsKey("cropperCircleOverlay") ? options.getBoolean("cropperCircleOverlay") : cropperCircleOverlay;
+        freeStyleCropEnabled = options.containsKey("freeStyleCropEnabled") ? options.getBoolean("freeStyleCropEnabled") : freeStyleCropEnabled;
         showCropGuidelines = options.containsKey("showCropGuidelines") ? options.getBoolean("showCropGuidelines") : showCropGuidelines;
         hideBottomControls = options.containsKey("hideBottomControls") ? options.getBoolean("hideBottomControls") : hideBottomControls;
         enableRotationGesture = options.containsKey("enableRotationGesture") ? options.getBoolean("enableRotationGesture") : enableRotationGesture;
@@ -470,6 +472,7 @@ public class ImageCropPickerModule extends WXModule {
         options.setCompressionFormat(Bitmap.CompressFormat.JPEG);
         options.setCompressionQuality(100);
         options.setCircleDimmedLayer(cropperCircleOverlay);
+        options.setFreeStyleCropEnabled(freeStyleCropEnabled);
         options.setShowCropGrid(showCropGuidelines);
         options.setHideBottomControls(hideBottomControls);
         if (cropperToolbarTitle != null) {
