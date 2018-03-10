@@ -243,32 +243,42 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
             imagePickerController.minimumNumberOfSelection = abs([[self.options objectForKey:@"minFiles"] intValue]);
             imagePickerController.maximumNumberOfSelection = abs([[self.options objectForKey:@"maxFiles"] intValue]);
             imagePickerController.showsNumberOfSelectedAssets = [[self.options objectForKey:@"showsSelectedCount"] boolValue];
-            if ([self.options objectForKey:@"smartAlbums"] != nil) {
-                NSDictionary *smartAlbums = @{
-                                              //cloud albums
-                                              @"PhotoStream" : @(PHAssetCollectionSubtypeAlbumMyPhotoStream),
-                                              //smart albums
-                                              @"Generic" : @(PHAssetCollectionSubtypeSmartAlbumGeneric),
-                                              @"Panoramas" : @(PHAssetCollectionSubtypeSmartAlbumPanoramas),
-                                              @"Videos" : @(PHAssetCollectionSubtypeSmartAlbumVideos),
-                                              @"Favorites" : @(PHAssetCollectionSubtypeSmartAlbumFavorites),
-                                              @"Timepalses" : @(PHAssetCollectionSubtypeSmartAlbumTimelapses),
-                                              @"AllHidden" : @(PHAssetCollectionSubtypeSmartAlbumAllHidden),
-                                              @"RecentlyAdded" : @(PHAssetCollectionSubtypeSmartAlbumRecentlyAdded),
-                                              @"Bursts" : @(PHAssetCollectionSubtypeSmartAlbumBursts),
-                                              @"SlomoVideos" : @(PHAssetCollectionSubtypeSmartAlbumSlomoVideos),
-                                              @"UserLibrary" : @(PHAssetCollectionSubtypeSmartAlbumUserLibrary),
-                                              @"SelfPortraits" : @(PHAssetCollectionSubtypeSmartAlbumSelfPortraits),
-                                              @"Screenshots" : @(PHAssetCollectionSubtypeSmartAlbumScreenshots), // ios9.0 or newer
-                                              @"DepthEffect" : @(PHAssetCollectionSubtypeSmartAlbumDepthEffect), // ios10.2 or newer
-                                              @"LivePhotos" : @(PHAssetCollectionSubtypeSmartAlbumLivePhotos),   // ios10.3 or newer
-                                              @"Animated" : @(PHAssetCollectionSubtypeSmartAlbumAnimated),       // ios11.0 or newer
-                                              @"LongExposure" : @(PHAssetCollectionSubtypeSmartAlbumLongExposures), // ios11.0 or newer
-                                              };
-                NSMutableArray *albumsToShow = [NSMutableArray arrayWithCapacity:5];
-                for (NSString* album in [self.options objectForKey:@"smartAlbums"]) {
-                    if ([smartAlbums objectForKey:album] != nil) {
-                        [albumsToShow addObject:[smartAlbums objectForKey:album]];
+            NSArray *smartAlbums = [self.options objectForKey:@"smartAlbums"];
+            if (smartAlbums != nil) {
+                NSDictionary *albums = @{
+                                         //user albums
+                                         @"Regular" : @(PHAssetCollectionSubtypeAlbumRegular),
+                                         @"SyncedEvent" : @(PHAssetCollectionSubtypeAlbumSyncedEvent),
+                                         @"SyncedFaces" : @(PHAssetCollectionSubtypeAlbumSyncedFaces),
+                                         @"SyncedAlbum" : @(PHAssetCollectionSubtypeAlbumSyncedAlbum),
+                                         @"Imported" : @(PHAssetCollectionSubtypeAlbumImported),
+                                         
+                                         //cloud albums
+                                         @"PhotoStream" : @(PHAssetCollectionSubtypeAlbumMyPhotoStream),
+                                         @"CloudShared" : @(PHAssetCollectionSubtypeAlbumCloudShared),
+                                         
+                                         //smart albums
+                                         @"Generic" : @(PHAssetCollectionSubtypeSmartAlbumGeneric),
+                                         @"Panoramas" : @(PHAssetCollectionSubtypeSmartAlbumPanoramas),
+                                         @"Videos" : @(PHAssetCollectionSubtypeSmartAlbumVideos),
+                                         @"Favorites" : @(PHAssetCollectionSubtypeSmartAlbumFavorites),
+                                         @"Timelapses" : @(PHAssetCollectionSubtypeSmartAlbumTimelapses),
+                                         @"AllHidden" : @(PHAssetCollectionSubtypeSmartAlbumAllHidden),
+                                         @"RecentlyAdded" : @(PHAssetCollectionSubtypeSmartAlbumRecentlyAdded),
+                                         @"Bursts" : @(PHAssetCollectionSubtypeSmartAlbumBursts),
+                                         @"SlomoVideos" : @(PHAssetCollectionSubtypeSmartAlbumSlomoVideos),
+                                         @"UserLibrary" : @(PHAssetCollectionSubtypeSmartAlbumUserLibrary),
+                                         @"SelfPortraits" : @(PHAssetCollectionSubtypeSmartAlbumSelfPortraits),
+                                         @"Screenshots" : @(PHAssetCollectionSubtypeSmartAlbumScreenshots),
+                                         @"DepthEffect" : @(PHAssetCollectionSubtypeSmartAlbumDepthEffect),
+                                         @"LivePhotos" : @(PHAssetCollectionSubtypeSmartAlbumLivePhotos),
+                                         @"Animated" : @(PHAssetCollectionSubtypeSmartAlbumAnimated),
+                                         @"LongExposure" : @(PHAssetCollectionSubtypeSmartAlbumLongExposures),
+                                         };
+                NSMutableArray *albumsToShow = [NSMutableArray arrayWithCapacity:smartAlbums.count];
+                for (NSString* smartAlbum in smartAlbums) {
+                    if ([albums objectForKey:smartAlbum] != nil) {
+                        [albumsToShow addObject:[albums objectForKey:smartAlbum]];
                     }
                 }
                 imagePickerController.assetCollectionSubtypes = albumsToShow;
