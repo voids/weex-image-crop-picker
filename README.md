@@ -111,36 +111,37 @@
   ```
 #### options
 
-| Property                                |                   Type                   | Description                              |
-| --------------------------------------- | :--------------------------------------: | :--------------------------------------- |
-| cropping                                |           bool (default false)           | 是否开启图片剪裁                                 |
-| width                                   |                  number                  | 剪裁后图片的宽度，`cropping`为true时有效              |
-| height                                  |                  number                  | 剪裁后图片的高度，`cropping` 为true时有效             |
-| multiple                                |           bool (default false)           | 是否开启多选，开启多选后裁剪功能无效                       |
-| writeTempFile (ios only)                |           bool (default true)            | When set to false, does not write temporary files for the selected images. This is useful to improve performance when you are retrieving file contents with the `includeBase64` option and don't need to read files from disk. |
-| includeBase64                           |           bool (default false)           | 是否输出base64                               |
-| includeExif                             |           bool (default false)           | 是否输出图片exif信息，如gps、光圈、快门速度等               |
-| cropperActiveWidgetColor (android only) |       string (default `"#424242"`)       | When cropping image, determines ActiveWidget color. |
-| cropperStatusBarColor (android only)    |        string (default `#424242`)        | When cropping image, determines the color of StatusBar. |
-| cropperToolbarColor (android only)      |        string (default `#424242`)        | When cropping image, determines the color of Toolbar. |
-| freeStyleCropEnabled (android only)     |           bool (default false)           | Enables user to apply custom rectangle area for cropping |
-| cropperToolbarTitle                     |      string (default `Edit Photo`)       | When cropping image, determines the title of Toolbar. |
-| cropperCircleOverlay                    |           bool (default false)           | 是否裁剪时开启遮罩                                |
-| minFiles (ios only)                     |            number (default 1)            | Min number of files to select when using `multiple` option |
-| maxFiles (ios only)                     |            number (default 5)            | Max number of files to select when using `multiple` option |
-| waitAnimationEnd (ios only)             |           bool (default true)            | Promise will resolve/reject once ViewController `completion` block is called |
-| smartAlbums (ios only)                  | array (supported values: ['PhotoStream', 'Generic', 'Panoramas', 'Videos', 'Favorites', 'Timelapses', 'AllHidden', 'RecentlyAdded', 'Bursts', 'SlomoVideos', 'UserLibrary', 'SelfPortraits', 'Screenshots', 'DepthEffect', 'LivePhotos', 'Animated', 'LongExposure']) (default ['UserLibrary', 'PhotoStream', 'Panoramas', 'Videos', 'Bursts']) | List of smart albums to choose from      |
-| useFrontCamera (ios only)               |           bool (default false)           | Whether to default to the front/'selfie' camera when opened |
-| compressVideoPreset (ios only)          |      string (default MediumQuality)      | Choose which preset will be used for video compression |
-| compressImageMaxWidth                   |          number (default none)           | 图片压缩指定最大宽度                               |
-| compressImageMaxHeight                  |          number (default none)           | 图片压缩指定最大高度                               |
-| compressImageQuality                    |            number (default 1)            | 图片压缩质量 (取值范围 0 — 1，1为最好质量)               |
-| loadingLabelText (ios only)             | string (default "Processing assets...")  | Text displayed while photo is loading in picker |
-| mediaType                               |           string (default any)           | 媒体选择类型: 'photo'=照片, 'video'=视频, 'any'=全部 |
-| showsSelectedCount (ios only)           |           bool (default true)            | Whether to show the number of selected assets |
-| showCropGuidelines (android only)       |           bool (default true)            | Whether to show the 3x3 grid on top of the image during cropping |
-| hideBottomControls (android only)       |           bool (default false)           | Whether to display bottom controls       |
-| enableRotationGesture (android only)    |           bool (default false)           | Whether to enable rotating the image by hand gesture |
+| Property                                 |                   Type                   | Description                              |
+| ---------------------------------------- | :--------------------------------------: | :--------------------------------------- |
+| cropping                                 |           bool (default false)           | 是否开启图片剪裁                                 |
+| width                                    |                  number                  | 剪裁后图片的宽度，`cropping`为true时有效              |
+| height                                   |                  number                  | 剪裁后图片的高度，`cropping` 为true时有效             |
+| multiple                                 |           bool (default false)           | 是否开启多选，开启多选后裁剪功能无效                       |
+| writeTempFile (ios only)                 |           bool (default true)            | When set to false, does not write temporary files for the selected images. This is useful to improve performance when you are retrieving file contents with the `includeBase64` option and don't need to read files from disk. |
+| includeBase64                            |           bool (default false)           | 是否输出base64                               |
+| includeExif                              |           bool (default false)           | 是否输出图片exif信息，如gps、光圈、快门速度等               |
+| cropperActiveWidgetColor (android only)  |       string (default `"#424242"`)       | When cropping image, determines ActiveWidget color. |
+| cropperStatusBarColor (android only)     |        string (default `#424242`)        | When cropping image, determines the color of StatusBar. |
+| cropperToolbarColor (android only)       |        string (default `#424242`)        | When cropping image, determines the color of Toolbar. |
+| freeStyleCropEnabled (android only)      |           bool (default false)           | Enables user to apply custom rectangle area for cropping |
+| cropperToolbarTitle                      |      string (default `Edit Photo`)       | When cropping image, determines the title of Toolbar. |
+| cropperCircleOverlay                     |           bool (default false)           | 是否裁剪时开启遮罩                                |
+| disableCropperColorSetters (android only) |           bool (default false)           | When cropping image, disables the color setters for cropping library. |
+| minFiles (ios only)                      |            number (default 1)            | Min number of files to select when using `multiple` option |
+| maxFiles (ios only)                      |            number (default 5)            | Max number of files to select when using `multiple` option |
+| waitAnimationEnd (ios only)              |           bool (default true)            | Promise will resolve/reject once ViewController `completion` block is called |
+| smartAlbums (ios only)                   | array (supported values: ['PhotoStream', 'Generic', 'Panoramas', 'Videos', 'Favorites', 'Timelapses', 'AllHidden', 'RecentlyAdded', 'Bursts', 'SlomoVideos', 'UserLibrary', 'SelfPortraits', 'Screenshots', 'DepthEffect', 'LivePhotos', 'Animated', 'LongExposure']) (default ['UserLibrary', 'PhotoStream', 'Panoramas', 'Videos', 'Bursts']) | List of smart albums to choose from      |
+| useFrontCamera (ios only)                |           bool (default false)           | Whether to default to the front/'selfie' camera when opened |
+| compressVideoPreset (ios only)           |      string (default MediumQuality)      | Choose which preset will be used for video compression |
+| compressImageMaxWidth                    |          number (default none)           | 图片压缩指定最大宽度                               |
+| compressImageMaxHeight                   |          number (default none)           | 图片压缩指定最大高度                               |
+| compressImageQuality                     |            number (default 1)            | 图片压缩质量 (取值范围 0 — 1，1为最好质量)               |
+| loadingLabelText (ios only)              | string (default "Processing assets...")  | Text displayed while photo is loading in picker |
+| mediaType                                |           string (default any)           | 媒体选择类型: 'photo'=照片, 'video'=视频, 'any'=全部 |
+| showsSelectedCount (ios only)            |           bool (default true)            | Whether to show the number of selected assets |
+| showCropGuidelines (android only)        |           bool (default true)            | Whether to show the 3x3 grid on top of the image during cropping |
+| hideBottomControls (android only)        |           bool (default false)           | Whether to display bottom controls       |
+| enableRotationGesture (android only)     |           bool (default false)           | Whether to enable rotating the image by hand gesture |
 
 > 参数均与[react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker) 文档中所列的参数保持一致
 >
