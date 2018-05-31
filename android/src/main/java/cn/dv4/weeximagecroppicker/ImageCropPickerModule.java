@@ -58,6 +58,7 @@ public class ImageCropPickerModule extends WXModule {
     private boolean showCropGuidelines = true;
     private boolean hideBottomControls = false;
     private boolean enableRotationGesture = false;
+    private boolean disableCropperColorSetters = false;
     private String pathToDelete;
     private JSONObject options;
 
@@ -107,6 +108,7 @@ public class ImageCropPickerModule extends WXModule {
         showCropGuidelines = options.containsKey("showCropGuidelines") ? options.getBoolean("showCropGuidelines") : showCropGuidelines;
         hideBottomControls = options.containsKey("hideBottomControls") ? options.getBoolean("hideBottomControls") : hideBottomControls;
         enableRotationGesture = options.containsKey("enableRotationGesture") ? options.getBoolean("enableRotationGesture") : enableRotationGesture;
+        disableCropperColorSetters = options.containsKey("disableCropperColorSetters") ? options.getBoolean("disableCropperColorSetters") : disableCropperColorSetters;
         this.options = options;
         this.responseHelper = new ResponseHelper(callback);
     }
@@ -487,7 +489,9 @@ public class ImageCropPickerModule extends WXModule {
                     UCropActivity.ALL  // When 'aspect ratio'-tab active
             );
         }
-        configureCropperColors(options);
+        if (!disableCropperColorSetters) {
+            configureCropperColors(options);
+        }
 
         UCrop.of(uri, Uri.fromFile(new File(this.getTmpDir(activity), UUID.randomUUID().toString() + ".jpg")))
                 .withMaxResultSize(width, height)
