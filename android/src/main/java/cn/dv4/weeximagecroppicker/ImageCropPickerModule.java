@@ -3,6 +3,7 @@ package cn.dv4.weeximagecroppicker;
 import android.Manifest;
 import android.app.Activity;
 import android.content.ClipData;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
@@ -325,14 +326,17 @@ public class ImageCropPickerModule extends WXModule {
         return Base64.encodeToString(bytes, Base64.NO_WRAP);
     }
 
-    private static String getMimeType(String url) {
-        String type = null;
-        String extension = MimeTypeMap.getFileExtensionFromUrl(url);
-        if (extension != null) {
-            type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+    private String getMimeType(String url) {
+        String mimeType;
+        Uri uri = Uri.fromFile(new File(url));
+        if (uri.getScheme().equals(ContentResolver.SCHEME_CONTENT)) {
+            ContentResolver cr = getCurrentActivity().getApplicationContext().getContentResolver();
+            mimeType = cr.getType(uri);
+        } else {
+            String fileExtension = MimeTypeMap.getFileExtensionFromUrl(uri.toString());
+            mimeType = MimeTypeMap.getSingleton().getMimeTypeFromExtension(fileExtension.toLowerCase());
         }
-
-        return type;
+        return mimeType;
     }
 
     private JSONObject getSelection(Activity activity, Uri uri, boolean isCamera) throws Exception {
