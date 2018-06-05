@@ -83,7 +83,9 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
                                 @"compressVideoPreset": @"MediumQuality",
                                 @"loadingLabelText": @"Processing assets...",
                                 @"mediaType": @"any",
-                                @"showsSelectedCount": @YES
+                                @"showsSelectedCount": @YES,
+                                @"cropperCancelText": @"Cancel",
+                                @"cropperChooseText": @"Choose"
                                 };
         self.compression = [[Compression alloc] init];
     }
@@ -321,8 +323,12 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
     imageCropVC.avoidEmptySpaceAroundImage = YES;
     imageCropVC.dataSource = self;
     imageCropVC.delegate = self;
+    NSString *cropperCancelText = [self.options objectForKey:@"cropperCancelText"];
+    NSString *cropperChooseText = [self.options objectForKey:@"cropperChooseText"];
     [imageCropVC setModalPresentationStyle:UIModalPresentationCustom];
     [imageCropVC setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+    [imageCropVC.cancelButton setTitle:cropperCancelText forState:UIControlStateNormal];
+    [imageCropVC.chooseButton setTitle:cropperChooseText forState:UIControlStateNormal];
     dispatch_async(dispatch_get_main_queue(), ^{
         [[self getRootVC] presentViewController:imageCropVC animated:YES completion:nil];
     });
