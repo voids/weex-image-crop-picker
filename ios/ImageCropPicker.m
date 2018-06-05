@@ -168,14 +168,13 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     UIImage *chosenImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-    UIImage *chosenImageT = [chosenImage fixOrientation];
     
     NSDictionary *exif;
     if([[self.options objectForKey:@"includeExif"] boolValue]) {
         exif = [info objectForKey:UIImagePickerControllerMediaMetadata];
     }
     
-    [self processSingleImagePick:chosenImageT withExif:exif withViewController:picker withSourceURL:self.croppingFile[@"sourceURL"] withLocalIdentifier:self.croppingFile[@"localIdentifier"] withFilename:self.croppingFile[@"filename"] withCreationDate:self.croppingFile[@"creationDate"] withModificationDate:self.croppingFile[@"modificationDate"]];
+    [self processSingleImagePick:chosenImage withExif:exif withViewController:picker withSourceURL:self.croppingFile[@"sourceURL"] withLocalIdentifier:self.croppingFile[@"localIdentifier"] withFilename:self.croppingFile[@"filename"] withCreationDate:self.croppingFile[@"creationDate"] withModificationDate:self.croppingFile[@"modificationDate"]];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -307,7 +306,7 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
     self.currentSelectionMode = CROPPING;
     NSString* path = [options objectForKey:@"path"];
     UIImage* img =  [[UIImage alloc]initWithContentsOfFile:path];
-    [self startCropping:img];
+    [self startCropping:[img fixOrientation]];
     //self.callback(@{ERROR_CROPPER_IMAGE_NOT_FOUND_KEY:ERROR_CROPPER_IMAGE_NOT_FOUND_MSG});
 }
 
@@ -660,9 +659,9 @@ WX_EXPORT_METHOD(@selector(cleanSingle:callback:))
         self.croppingFile[@"modifcationDate"] = modificationDate;
         NSLog(@"CroppingFile %@", self.croppingFile);
         
-        [self startCropping:image];
+        [self startCropping:[image fixOrientation]];
     } else {
-        ImageResult *imageResult = [self.compression compressImage:image withOptions:self.options];
+        ImageResult *imageResult = [self.compression compressImage:[image fixOrientation] withOptions:self.options];
         NSString *filePath = [self persistFile:imageResult.data];
         if (filePath == nil) {
             [viewController dismissViewControllerAnimated:YES completion:[self waitAnimationEnd:^{
