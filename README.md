@@ -6,6 +6,14 @@
 
 > 由于weex market里的[weex-image-picker](https://github.com/weexext/weex-image-picker)插件并无裁剪和多选功能，看到也是从[react-native-image-picker](https://github.com/react-community/react-native-image-picker)移植来的，并且该插件原作者推荐了功能比较多的 [react-native-image-crop-picker](https://github.com/ivpusic/react-native-image-crop-picker) ，于是产生了此项目。
 
+## Result
+
+<p align="left">
+  <img width=200 title="iOS Single Pick" src="https://github.com/ivpusic/react-native-image-crop-picker/blob/master/images/ios_single_pick.png">
+<img width=200 title="iOS Crop" src="https://github.com/ivpusic/react-native-image-crop-picker/blob/master/images/ios_crop.png">
+<img width=200 title="iOS Multiple Pick" src="https://github.com/ivpusic/react-native-image-crop-picker/blob/master/images/ios_multiple_pick.png">
+</p>
+
 ## Android
 
 - root目录的build.gradle增加jitpack的地址
